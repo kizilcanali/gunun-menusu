@@ -20,6 +20,13 @@ client.on('message', msg => {
       `);
     msg.reply(menuTable);
   }
+  else if (msg.content === 'yardım'){
+    const helpTable = new Discord.MessageEmbed()
+    .setTitle("Komutlar")
+    .setDescription(`Günün Menüsünü Görmek İçin: günün-menüsü `);
+    msg.reply(helpTable);
+  }
+  
 });
 
 client.login(token.token);
