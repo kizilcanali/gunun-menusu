@@ -26,6 +26,10 @@ client.on('message', msg => {
     .setDescription(`Günün Menüsünü Görmek İçin: günün-menüsü `);
     msg.reply(helpTable);
   }
+  // Tek tek yemekler kategorileri gelecek
+  // Çorba ana yemek tatlı
+  // Tarif
+  // Kalori
   
 });
 
