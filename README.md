@@ -7,3 +7,4 @@ Her gün ne yemek yapacağınıza karar vermek gerçekten can sıkan bir iş. Bu
 | Komut                  | Açıklama                                               |
 | ---------------------- | ------------------------------------------------------ |
 | günün-menüsü   		 | İşte ağız sulandıran bir menü karşınızda               |
+|  yardım                 |  Tüm komutları göster								  |
