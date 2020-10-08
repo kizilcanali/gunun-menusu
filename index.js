@@ -7,6 +7,10 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+  // Tek tek yemekler kategorileri gelecek [X]
+  // Tarif                                 []
+  // Kalori                                []
+
 client.on('message', msg => {
   if (msg.content === 'günün-menüsü') {
       rnd = Math.floor(Math.random()*31);
@@ -20,12 +24,7 @@ client.on('message', msg => {
       `);
     msg.reply(menuTable);
   }
-  else if (msg.content === 'yardım'){
-    const helpTable = new Discord.MessageEmbed()
-    .setTitle("Komutlar")
-    .setDescription(`Günün Menüsünü Görmek İçin: günün-menüsü `);
-    msg.reply(helpTable);
-  }else if (msg.content == 'çorba'){
+  else if (msg.content == 'çorba'){
     const corbaTable = new Discord.MessageEmbed()
     .setTitle("İşte enfes bir çorba")
     .setDescription(`**Çorba:** ${menus[rnd][0]}`);
@@ -45,10 +44,18 @@ client.on('message', msg => {
     .setTitle("Bak işte bu yanında iyi gider")
     .setDescription(`**Yemek:** ${menus[rnd][2]}`);
     msg.reply(tamamlayıcıTable);
+  }else if (msg.content === 'yardım'){
+    const helpTable = new Discord.MessageEmbed()
+    .setTitle("Komutlar")
+    .setDescription(
+      `Günün Menüsünü Görmek İçin: **günün-menüsü** 
+      \nEnfes Çorbalar İçin: **çorba** 
+      \nEnfes Yemekler İçin: **ana-yemek** 
+      \nYani bu da yanında gider baklar için: **tamamlayıcı-yemek** 
+      \nVe Kapanışı Leziz Bir Tatlıyla Yapmak İçin: **tatlı**`);
+    msg.reply(helpTable);
   }
-  // Tek tek yemekler kategorileri gelecek [X]
-  // Tarif                                 []
-  // Kalori                                []
+
   
 });
 
