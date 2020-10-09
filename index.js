@@ -13,7 +13,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'günün-menüsü') {
-      rnd = Math.floor(Math.random()*31);
+      rnd = randomGenerator();
       const menuTable = new Discord.MessageEmbed()
       .setTitle("Günün Menüsü")
       .setDescription(`
@@ -25,21 +25,25 @@ client.on('message', msg => {
     msg.reply(menuTable);
   }
   else if (msg.content == 'çorba'){
+    rnd = randomGenerator();
     const corbaTable = new Discord.MessageEmbed()
     .setTitle("İşte enfes bir çorba")
     .setDescription(`**Çorba:** ${menus[rnd][0]}`);
     msg.reply(corbaTable);
   }else if (msg.content == 'ana-yemek'){
+    rnd = randomGenerator();
     const anaYemekTable = new Discord.MessageEmbed()
     .setTitle("İşte enfes bir yemek")
     .setDescription(`**Yemek:** ${menus[rnd][1]}`);
     msg.reply(anaYemekTable);
   }else if (msg.content == 'tatlı'){
+    rnd = randomGenerator();
     const tatlıTable = new Discord.MessageEmbed()
     .setTitle("İşte leziz bir tatlı")
     .setDescription(`**Tatlı:** ${menus[rnd][3]}`);
     msg.reply(tatlıTable);
-  }else if (msg.content == 'tamamlayıcı-yemek'){
+  }else if (msg.content == 'yardımcı-yemek'){
+    rnd = randomGenerator();
     const tamamlayıcıTable = new Discord.MessageEmbed()
     .setTitle("Bak işte bu yanında iyi gider")
     .setDescription(`**Yemek:** ${menus[rnd][2]}`);
@@ -55,8 +59,10 @@ client.on('message', msg => {
       \nVe Kapanışı Leziz Bir Tatlıyla Yapmak İçin: **tatlı**`);
     msg.reply(helpTable);
   }
-
-  
 });
+
+function randomGenerator(){
+  return Math.floor(Math.random()*31);
+}
 
 client.login(token.token);
